@@ -8,8 +8,6 @@ module.exports = {
 
  entry: {
    index: './src/index.js',
-   another: './src/another-module.js',
-
  },
  devtool: 'inline-source-map',
  devServer: {
@@ -19,13 +17,13 @@ module.exports = {
   new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   new HtmlWebpackPlugin({
 
-    title: 'Output Management',
+    title: 'Caching',
 
   }),
 
 ],
    output: {
-   filename: '[name].bundle.js',
+   filename: '[name].[contenthash].js',
   path: path.resolve(__dirname, 'dist'),
   publicPath: '/'
   }
